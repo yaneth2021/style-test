@@ -15,83 +15,111 @@ import {
   FontAwesome5,
   Ionicons,
 } from "@expo/vector-icons";
-import { ProgressBar } from "react-native-paper";
+import { ProgressBar, Colors } from "react-native-paper";
 
 const ViewStyleProps = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
+        <View
+          style={[styles.rowContainer, { marginLeft: "75%", marginTop: "8%" }]}
+        >
+          <FontAwesome name="bell" size={24} color="black" />
+
+          <View
+            style={[
+              styles.Container,
+              { marginLeft: "-12%", marginTop: "-10%" },
+            ]}
+          >
+            <MaterialCommunityIcons
+              name="numeric-3-circle"
+              size={24}
+              color="red"
+            />
+          </View>
+          <View
+            style={[styles.Container, { marginLeft: "-2%", marginTop: "-10%" }]}
+          >
+            <MaterialCommunityIcons
+              name="dots-vertical"
+              size={24}
+              color="black"
+            />
+          </View>
+        </View>
         <View style={[styles.scrollView, { marginTop: "20%" }]}>
           <Text style={styles.title}>Servicios disponibles</Text>
-          <View style={[styles.rowContainer, { flex: 1, marginTop: "8%" }]}>
+          <View style={{ flex: 1, marginTop: "8%" }}>
             <View
-              style={[
-                styles.rowContainer,
-                {
-                  flex: 0.7,
-                  marginTop: "4%",
-                  justifyContent: "space-between",
-                },
-              ]}
+              style={{
+                flex: 1,
+                alignItems: "center",
+                justifyContent: "space-around",
+                flexDirection: "row",
+              }}
             >
-              <Entypo name="circle" color="grey" size={18} />
-              <Entypo name="circle" color="grey" size={18} />
-              <View
-                style={[
-                  styles.rowContainer,
-                  {
-                    flex: 2,
-                    padding: 6,
-                    marginTop: "30%",
-                    marginRight: "12%",
-                    marginLeft: "-20%",
-                    justifyContent: "space-between",
-                  },
-                ]}
-              >
+              <View style={{ alignItems: "center", justifyContent: "center" }}>
+                <Entypo name="circle" color="grey" size={18} />
                 <MaterialCommunityIcons
                   name="truck-outline"
                   size={38}
                   color="orange"
                 />
+              </View>
+              <View style={{ alignItems: "center", justifyContent: "center" }}>
+                <Entypo name="circle" color="grey" size={18} />
                 <MaterialCommunityIcons
                   name="dump-truck"
                   size={38}
                   color="orange"
                 />
               </View>
-            </View>
 
-            <View
-              style={[
-                styles.rowContainer,
-                {
-                  flex: 1,
-                  marginTop: "4%",
-                  backgroundColor: "#fff",
-                  justifyContent: "space-between",
-                  borderRadius: 10,
-                },
-              ]}
-            >
-              <Entypo name="circle" color="grey" size={18} />
-              <Entypo name="circle" color="grey" size={18} />
-              <Entypo name="circle" color="grey" size={18} />
               <View
-                style={[
-                  styles.rowContainer,
-                  {
-                    flex: 1,
-                    marginTop: "30%",
-                    marginRight: "4%",
-                    marginLeft: "-20%",
-                    justifyContent: "space-between",
-                  },
-                ]}
+                style={{
+                  backgroundColor: "white",
+                  flex: 0.8,
+                  borderRadius: 10,
+                  flexDirection: "row",
+                  paddingVertical: 15,
+                  justifyContent: "space-around",
+                }}
               >
-                <Text style={styles.textdias}>Hoy</Text>
-                <Text style={styles.textdias}>3 días</Text>
-                <Text style={styles.textdias}>5 días</Text>
+                <View
+                  style={{ alignItems: "center", justifyContent: "center" }}
+                >
+                  <Entypo
+                    style={{ marginBottom: 10 }}
+                    name="circle"
+                    color="grey"
+                    size={18}
+                  />
+                  <Text style={styles.textdias}>Hoy</Text>
+                </View>
+                <View
+                  style={{ alignItems: "center", justifyContent: "center" }}
+                >
+                  <Entypo
+                    style={{ marginBottom: 10 }}
+                    name="circle"
+                    color="grey"
+                    size={18}
+                  />
+
+                  <Text style={styles.textdias}>3 días</Text>
+                </View>
+                <View
+                  style={{ alignItems: "center", justifyContent: "center" }}
+                >
+                  <Entypo
+                    style={{ marginBottom: 10 }}
+                    name="circle"
+                    color="grey"
+                    size={18}
+                  />
+                  <Text style={styles.textdias}>5 días</Text>
+                </View>
               </View>
             </View>
           </View>
@@ -215,7 +243,7 @@ const ViewStyleProps = () => {
                 </Text>
               </View>
 
-              <View style={[styles.Container, { marginTop: "2%" }]}>
+              <View style={styles.Container}>
                 <MaterialCommunityIcons
                   name="truck-outline"
                   size={38}
@@ -229,16 +257,35 @@ const ViewStyleProps = () => {
               </TouchableOpacity>
             </View>
           </View>
-          <View style={[styles.rowContainer, { marginBottom: "4%" }]}>
+          <View
+            style={[
+              styles.rowContainer,
+              {
+                alignItems: "center",
+                marginBottom: "4%",
+              },
+            ]}
+          >
             <Text style={styles.textPrecios}>Cupo</Text>
             <Text style={[styles.textPrecios, { fontWeight: "bold" }]}>
               18 de 22
             </Text>
-            <View style={styles.Container}>
-              <ProgressBar
-                style={{ marginTop: "4%", marginBottom: "4%" }}
-                progress={0.8}
-                color={"red"}
+            <View style={styles.rowContainer}>
+              <View
+                style={{
+                  height: 5,
+                  width: "45%",
+                  marginLeft: "4%",
+                  backgroundColor: "red",
+                }}
+              />
+              <View
+                style={{
+                  height: 5,
+                  width: "20%",
+                  marginRight: "6%",
+                  backgroundColor: "grey",
+                }}
               />
             </View>
           </View>
@@ -362,11 +409,24 @@ const ViewStyleProps = () => {
             <Text style={[styles.textPrecios, { fontWeight: "bold" }]}>
               2 de 10
             </Text>
-            <View style={styles.Container}>
-              <ProgressBar
-                style={{ marginTop: "4%", marginBottom: "4%" }}
-                progress={0.2}
-                color={"limegreen"}
+            <View style={styles.rowContainer}>
+              <View
+                style={{
+                  height: 5,
+                  width: "34%",
+                  marginLeft: "6%",
+                  marginTop: "4%",
+                  backgroundColor: "green",
+                }}
+              />
+              <View
+                style={{
+                  height: 5,
+                  width: "45%",
+                  marginLeft: "-10%",
+                  marginTop: "4%",
+                  backgroundColor: "grey",
+                }}
               />
             </View>
           </View>
@@ -490,11 +550,24 @@ const ViewStyleProps = () => {
             <Text style={[styles.textPrecios, { fontWeight: "bold" }]}>
               5 de 10
             </Text>
-            <View style={styles.Container}>
-              <ProgressBar
-                style={{ marginTop: "4%", marginBottom: "4%" }}
-                progress={0.5}
-                color={"orange"}
+            <View style={styles.rowContainer}>
+              <View
+                style={{
+                  height: 5,
+                  width: "40%",
+                  marginLeft: "2%",
+                  marginTop: "4%",
+                  backgroundColor: "orange",
+                }}
+              />
+              <View
+                style={{
+                  height: 5,
+                  width: "39%",
+                  marginLeft: "-6%",
+                  marginTop: "4%",
+                  backgroundColor: "grey",
+                }}
               />
             </View>
           </View>

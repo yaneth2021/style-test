@@ -1,9 +1,10 @@
 import React from "react";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+import { createStackNavigator } from "@react-navigation/stack";
 import FirstScreen from "../../screens/pscreen/example2";
 import SecondScreen from "../../screens/sscreen/example4";
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 const headerOptions = { headerShown: false };
 

@@ -141,7 +141,7 @@ const Group = ({ title, userName, flowers, text, msgNumber }) => {
   );
 };
 
-const ViewStyleProps = () => {
+const ViewStyleProps = ({ navigation }) => {
   return (
     <SafeAreaView
       style={{ backgroundColor: "#ebebeb", marginTop: 20, flex: 1 }}
@@ -379,7 +379,7 @@ const ViewStyleProps = () => {
               }}
             />
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("sscreen")}>
             <Image
               source={require("../../assets/images/portrait-of-man2.jpg")}
               fadeDuration={0}
